@@ -1,4 +1,6 @@
 # emacs
+https://github.com/Tyaba/emacs.git
+
 [mac/linux]
 ~/.emacs.d/(init.el, common.el, x11.el)
 
