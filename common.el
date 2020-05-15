@@ -1,3 +1,5 @@
+(package-initialize)
+
 ;; default char encoding system as utf-8
 (set-default-coding-systems 'utf-8)
  
@@ -90,21 +92,21 @@
 ;; indenting switch
 (c-set-offset 'case-label '+)
  
-(require 'helm-config)
-(helm-mode 1)
+;;(require 'helm-config)
+;; (helm-mode 1)
  
-(define-key global-map (kbd "M-x")     'helm-M-x)
-(define-key global-map (kbd "C-x C-r") 'helm-recentf)
-(define-key global-map (kbd "C-c f") 'helm-recentf)
-(define-key global-map (kbd "M-y")     'helm-show-kill-ring)
-(define-key global-map (kbd "C-c i")   'helm-imenu)
-(define-key global-map (kbd "C-x b")   'helm-buffers-list)
-(define-key global-map (kbd "M-r")     'helm-resume)
-(define-key global-map (kbd "C-M-h")   'helm-apropos)
-(define-key helm-map (kbd "C-h") 'delete-backward-char)
-(define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
-(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+;; (define-key global-map (kbd "M-x")     'helm-M-x)
+;; (define-key global-map (kbd "C-x C-r") 'helm-recentf)
+;; (define-key global-map (kbd "C-c f") 'helm-recentf)
+;; (define-key global-map (kbd "M-y")     'helm-show-kill-ring)
+;; (define-key global-map (kbd "C-c i")   'helm-imenu)
+;; (define-key global-map (kbd "C-x b")   'helm-buffers-list)
+;; (define-key global-map (kbd "M-r")     'helm-resume)
+;; (define-key global-map (kbd "C-M-h")   'helm-apropos)
+;; (define-key helm-map (kbd "C-h") 'delete-backward-char)
+;; (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+;; (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+;; (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
  
 ; enable migemo wher package is installed
 (when (require 'migemo nil t)
@@ -135,39 +137,39 @@
 (define-key dired-mode-map (kbd "a") 'dired-find-file)
  
 ;; web-mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
+;; (require 'web-mode)
+;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
  
 ; auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
+;; (require 'auto-complete-config)
+;; (ac-config-default)
 ; global auto-complete
-(global-auto-complete-mode t)
+;; (global-auto-complete-mode t)
  
  
 ;; shell pop
-(require 'shell-pop)
-(custom-set-variables
- '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
- '(shell-pop-term-shell "/bin/bash")
-; '(shell-pop-universal-key "C-t")
- '(shell-pop-window-height 60)
- '(shell-pop-window-position "bottom"))
-;; C-c t to use terminal
-(define-key mode-specific-map "t" 'shell-pop)
+;; (require 'shell-pop)
+;; (custom-set-variables
+;;  '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
+;;  '(shell-pop-term-shell "/bin/bash")
+;; ; '(shell-pop-universal-key "C-t")
+;;  '(shell-pop-window-height 60)
+;;  '(shell-pop-window-position "bottom"))
+;; ;; C-c t to use terminal
+;; (define-key mode-specific-map "t" 'shell-pop)
  
 ;; move to trash instead of remove
 (setq delete-by-moving-to-trash t)
  
-;; byte-complie automatically
-(require 'auto-async-byte-compile)
-(setq auto-async-byte-compile-exclude-files-regexp "~/tmp/")
-(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+;; ;; byte-complie automatically
+;; (require 'auto-async-byte-compile)
+;; (setq auto-async-byte-compile-exclude-files-regexp "~/tmp/")
+;; (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
  
 ;; open-junk-file
-(require 'open-junk-file)
-(define-key mode-specific-map "o" 'open-junk-file)
+;; (require 'open-junk-file)
+;; (define-key mode-specific-map "o" 'open-junk-file)
  
  
 ; add newline to bottom of file
