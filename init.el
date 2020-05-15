@@ -1,0 +1,22 @@
+(cond ((equal window-system nil)
+       (load "~/.emacs.d/common.el"))
+ 
+      ((equal system-type 'gnu/linux)
+       (load "~/.emacs.d/x11.el")
+       (load "~/.emacs.d/common.el"))
+ 
+      ((equal system-type 'windows-nt)
+       (load "~/.emacs.d/x11.el")
+       (set-face-attribute 'default nil :family "Inconsolata" :height 135)
+       (set-fontset-font nil 'japanese-jisx0208 '("MeiryoKe_Gothic" . "iso10646-1"))
+       (set-fontset-font nil 'japanese-jisx0212 '("MeiryoKe_Gothic" . "iso10646-1"))
+       (setq migemo-dictionary "C:/cmigemo/dict/utf-8/migemo-dict")
+       (setq migemo-command "cmigemo")
+       (load "~/.emacs.d/common.el"))
+ 
+      ((equal system-type 'darwin)
+       (load "~/.emacs.d/x11.el")
+       (set-frame-font "Ricty 16")
+       (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+       (setq migemo-command "/usr/local/bin/cmigemo")
+       (load "~/.emacs.d/common.el")))
